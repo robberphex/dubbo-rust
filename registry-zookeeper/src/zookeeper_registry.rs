@@ -55,18 +55,6 @@ pub struct ZookeeperRegistry {
     listeners: RwLock<HashMap<String, Arc<<ZookeeperRegistry as Registry>::NotifyListener>>>,
 }
 
-pub struct MyNotifyListener {}
-
-impl NotifyListener for MyNotifyListener {
-    fn notify(&self, event: dubbo::registry::ServiceEvent) {
-        todo!()
-    }
-
-    fn notify_all(&self, event: dubbo::registry::ServiceEvent) {
-        todo!()
-    }
-}
-
 #[derive(Serialize, Deserialize, Debug)]
 pub struct ZkServiceInstance {
     name: String,
